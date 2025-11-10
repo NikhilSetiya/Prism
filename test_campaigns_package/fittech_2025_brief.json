@@ -1,0 +1,50 @@
+{
+  "campaign_id": "fittech_2025",
+  "region": "North America",
+  "target_audience": "fitness_enthusiasts_25-40",
+  "campaign_message": "Your Fitness, Elevated",
+  "locales": ["en", "es"],
+  "products": [
+    {
+      "id": "pulse_smartwatch",
+      "name": "Pulse Pro Smartwatch",
+      "description": "Advanced fitness tracking with heart rate zones, GPS, sleep monitoring, and 7-day battery life. Water resistant to 50m with AMOLED display.",
+      "category": "electronics",
+      "creative_brief": {
+        "setting": "active outdoor lifestyle with runner",
+        "mood": "energetic and motivated",
+        "key_visual_elements": [
+          "morning sunlight",
+          "athletic person in motion",
+          "watch displaying fitness metrics"
+        ]
+      },
+      "brand_style": {
+        "color_palette": ["#FF4757", "#2C3E50", "#FFFFFF", "#00D2D3"],
+        "visual_style": "modern tech meets active lifestyle",
+        "photography_style": "dynamic action photography"
+      }
+    },
+    {
+      "id": "airflow_earbuds",
+      "name": "AirFlow Wireless Earbuds",
+      "description": "True wireless earbuds with active noise cancellation, 8-hour playtime, sweat-proof design perfect for workouts. Includes charging case for 32 hours total.",
+      "category": "electronics",
+      "creative_brief": {
+        "setting": "gym environment with athlete training",
+        "mood": "focused and powerful",
+        "key_visual_elements": [
+          "dramatic side lighting",
+          "sweat and determination",
+          "product in action"
+        ]
+      },
+      "brand_style": {
+        "color_palette": ["#FF4757", "#1E272E", "#FFFFFF", "#00D2D3"],
+        "visual_style": "sleek tech with athletic edge",
+        "photography_style": "high-contrast product photography"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,36 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# Output directories
+output/
+cache/
+logs/
+
+# Demo/Test data (excluding test_campaigns_package which is needed for setup)
+*_brief.json
+!test_campaigns_package/**/*_brief.json
+assets/brand/*/
+assets/input/*/
+!test_campaigns_package/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+

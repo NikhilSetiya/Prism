@@ -1,0 +1,144 @@
+# GenAI Provider Configuration
+generator:
+  provider: "openai"
+  model: "dall-e-3"
+  api_key: ${OPENAI_API_KEY}
+  max_retries: 3
+  rate_limit: 45  # requests per minute (under 50/min limit)
+
+# Hero Image Configuration
+hero_image:
+  size: "1024x1024"  # Square for balanced cropping to all ratios
+  quality: "hd"  # standard or hd ($0.04 vs $0.08 per image)
+  cache_enabled: true
+
+# Campaign Configuration
+campaign:
+  aspect_ratios:
+    - "1:1"
+    - "9:16"
+    - "16:9"
+  output_format: "png"
+  quality: "hd"  # standard or hd
+
+# Aspect Ratio Processing
+aspect_ratio_processing:
+  crop_strategy: "center"  # Center-weighted crop from hero
+  quality: 95  # PIL quality setting for variations
+
+# Prompt Engineering
+prompts:
+  product_template: "templates/product_prompt.txt"
+  setting_styles:
+    default: "clean, professional studio setting"
+    lifestyle: "natural lifestyle environment"
+    minimal: "minimalist white background"
+  
+  lighting_styles:
+    default: "soft professional studio lighting"
+    natural: "natural window light"
+    dramatic: "dramatic side lighting"
+
+# Text Overlay Configuration
+text_overlay:
+  font: "assets/brand/Helvetica-Bold.ttf"
+  font_size: 48  # Base size, scaled by resolution
+  color: "#FFFFFF"
+  outline_color: "#000000"
+  outline_width: 2
+  
+  positions:
+    "1:1": "bottom_third"
+    "9:16": "bottom_quarter"
+    "16:9": "bottom_third"
+
+# Brand Configuration
+brand:
+  logo_path: "assets/brand/logo.png"
+  logo_position: "bottom_right"  # or bottom_left, top_right, top_left
+  logo_opacity: 0.9
+  logo_scale: 0.1  # 10% of image width
+  brand_colors:
+    - "#FF6B35"  # Primary
+    - "#004E89"  # Secondary
+    - "#F7FFF7"  # Background
+
+# Storage Configuration
+storage:
+  backend: "local"
+  
+  local:
+    output_base: "./output"
+    cache_base: "./cache"
+    
+  azure:
+    connection_string: ${AZURE_STORAGE_CONNECTION_STRING}
+    container_name: "campaign-assets"
+    
+  s3:
+    bucket: ${S3_BUCKET}
+    region: ${AWS_REGION}
+
+# Asset Management
+assets:
+  input_folder: "./assets/input"
+  cache_enabled: true
+  cache_ttl: 2592000  # 30 days in seconds
+
+# Localization
+localization:
+  enabled: true
+  default_locale: "en"
+  supported_locales:
+    - "en"
+    - "fr"
+    - "de"
+    - "es"
+    - "ja"
+  translation_provider: "openai"
+  translation_model: "gpt-4o"
+
+# Scalability & Performance
+scalability:
+  max_workers: 3  # Parallel threads for campaign processing
+  batch_size: 10  # Max assets per batch (for future batch optimization)
+  enable_parallel: true  # Enable parallel processing
+
+# Governance & Compliance
+governance:
+  # Pre-flight LLM validation
+  llm_validation_enabled: true
+  llm_validation_model: "gpt-4o-mini"
+  validation_blocking: true  # Block campaign if validation fails
+  
+  # Prohibited content categories (configurable)
+  prohibited_categories:
+    - "violence"
+    - "hate speech"
+    - "sexual content"
+    - "medical claims"
+    # Add custom categories as needed
+  
+  # Post-generation checks
+  legal_check_enabled: true
+  brand_check_enabled: true
+  content_safety_enabled: false  # Requires external API
+  min_resolution: 1024  # Minimum pixel dimension
+  prohibited_terms:
+    - "illegal"
+    - "prohibited"
+    - "banned"
+    # Add more terms as needed (backwards compatibility)
+
+# Post-Processing
+post_processing:
+  enabled: true
+  intensity: 0.3  # 0.0 to 1.0 (subtle to strong)
+
+# Logging
+logging:
+  level: "INFO"
+  output_file: "logs/campaign_execution.json"
+  include_costs: true
+  include_timings: true
+

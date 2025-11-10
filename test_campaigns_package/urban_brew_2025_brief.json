@@ -1,0 +1,50 @@
+{
+  "campaign_id": "urban_brew_2025",
+  "region": "EMEA",
+  "target_audience": "urban_professionals_28-45",
+  "campaign_message": "Craft Your Day",
+  "locales": ["en", "fr"],
+  "products": [
+    {
+      "id": "cold_brew_original",
+      "name": "Urban Cold Brew Original",
+      "description": "Smooth cold brew coffee crafted from single-origin Ethiopian beans. Rich chocolate notes with zero sugar, organic and fair trade certified. 250ml bottle.",
+      "category": "beverage",
+      "creative_brief": {
+        "setting": "minimalist modern café with morning light",
+        "mood": "calm and sophisticated",
+        "key_visual_elements": [
+          "natural window light",
+          "coffee being poured",
+          "condensation on bottle"
+        ]
+      },
+      "brand_style": {
+        "color_palette": ["#6F4E37", "#F5F5DC", "#2C1810", "#D4A574"],
+        "visual_style": "artisanal meets urban minimalism",
+        "photography_style": "editorial lifestyle photography"
+      }
+    },
+    {
+      "id": "energize_plus",
+      "name": "Urban Energize+ Drink",
+      "description": "Natural energy drink with green tea caffeine, B-vitamins, and adaptogens. No artificial sweeteners. Coconut water base with tropical mango flavor. 355ml can.",
+      "category": "beverage",
+      "creative_brief": {
+        "setting": "bright urban workspace with creative professional",
+        "mood": "vibrant and productive",
+        "key_visual_elements": [
+          "colorful gradient backdrop",
+          "fresh fruit elements",
+          "product with ice"
+        ]
+      },
+      "brand_style": {
+        "color_palette": ["#FF6B35", "#F7B731", "#5F27CD", "#FFFFFF"],
+        "visual_style": "bold and energetic with premium feel",
+        "photography_style": "vibrant commercial photography"
+      }
+    }
+  ]
+}
+
